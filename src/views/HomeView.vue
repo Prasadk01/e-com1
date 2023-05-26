@@ -1,18 +1,58 @@
+<!-- eslint-disable vue/no-unused-components -->
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <NavBar />
+
+  <MDBCarousel v-model="carousel1" :items="items1" fade />
+  <br />
+
+  <FooterBarr />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { defineComponent } from "vue";
+import { ref } from "vue";
+import { MDBCarousel } from "mdb-vue-ui-kit";
+import "mdb-vue-ui-kit/css/mdb.min.css";
 
-export default {
+import NavBar from "@/components/NavBar.vue";
+import FooterBarr from "@/components/FooterBarr.vue";
+
+export default defineComponent({
   name: "HomeView",
+
   components: {
-    HelloWorld,
+    NavBar,
+    FooterBarr,
+    MDBCarousel,
   },
-};
+  setup() {
+    const items1 = [
+      {
+        src: "https://mdbootstrap.com/img/Photos/Slides/img%20(15).webp",
+        alt: "...",
+        label: "First slide label",
+        caption: "Nulla vitae elit libero, a pharetra augue mollis interdum.",
+      },
+      {
+        src: "https://mdbootstrap.com/img/Photos/Slides/img%20(22).webp",
+        alt: "...",
+        label: "Second slide label",
+        caption: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      },
+      {
+        src: "https://mdbootstrap.com/img/Photos/Slides/img%20(23).webp",
+        alt: "...",
+        label: "Third slide label",
+        caption:
+          "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+      },
+    ];
+    const carousel1 = ref(0);
+    return {
+      items1,
+      carousel1,
+    };
+  },
+});
 </script>
+<style lang="css" scoped></style>
