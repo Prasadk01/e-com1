@@ -1,23 +1,42 @@
 <template>
   <NavBar /> <br />
   <h1>Categories</h1>
-  <router-link to="/electronics"
-    ><div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <img
-            src="../../assets/logo.png"
-            alt="electronic image"
-            style="width: 300px; height: 300px"
-          />
-        </div>
-        <div class="flip-card-back">
-          <h1>Electronics</h1>
-          <p>Click and go to the electronic page</p>
+  <div class="catagory">
+    <router-link to="/electronics">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              :src="eleThumbnail"
+              alt="electronic image"
+              style="width: 300px; height: 200px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Electronics</h1>
+            <p>Click to go to the electronics page</p>
+          </div>
         </div>
       </div>
-    </div></router-link
-  >
+    </router-link>
+    <router-link to="/electronics">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              :src="bueatyThumbnail"
+              alt="electronic image"
+              style="width: 300px; height: 200px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Electronics</h1>
+            <p>Click to go to the electronics page</p>
+          </div>
+        </div>
+      </div>
+    </router-link>
+  </div>
 
   <br />
   <FooterBarr />
@@ -33,6 +52,12 @@ export default {
     NavBar,
     FooterBarr,
   },
+  data() {
+    return {
+      eleThumbnail: require("@/assets/images/eleThumnail.jpg"),
+      bueatyThumbnail: require("@/assets/images/BeautyThumnail.jpg"),
+    };
+  },
 };
 </script>
 
@@ -43,6 +68,10 @@ h1 {
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+.catagory {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .flip-card {
