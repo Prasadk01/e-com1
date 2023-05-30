@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import CategorieView from "../views/CategoriesView.vue";
 import ElectronicsView from "../views/ElectronicsView.vue";
+import BueatyView from "../views/BueatyView.vue";
+import HomeDecorView from "../views/HomeDecorView.vue";
 
 const routes = [
   {
@@ -18,6 +20,16 @@ const routes = [
     path: "/electronics",
     name: "electronics",
     component: ElectronicsView,
+  },
+  {
+    path: "/bueatyProduct",
+    name: "bueatyProduct",
+    component: BueatyView,
+  },
+  {
+    path: "/HomeDecor",
+    name: "HomeDecor",
+    component: HomeDecorView,
   },
   {
     path: "/wishlist",

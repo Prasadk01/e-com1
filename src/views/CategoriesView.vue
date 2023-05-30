@@ -3,6 +3,7 @@
   <h1>Categories</h1>
   <div class="catagory">
     <router-link to="/electronics">
+      <div>Electronics Product</div>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
@@ -13,25 +14,45 @@
             />
           </div>
           <div class="flip-card-back">
-            <h1>Electronics</h1>
+            <h1>Electronics Product</h1>
             <p>Click to go to the electronics page</p>
           </div>
         </div>
       </div>
     </router-link>
-    <router-link to="/electronics">
+
+    <router-link to="/bueatyProduct">
+      <div>Bueaty Product</div>
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img
               :src="bueatyThumbnail"
-              alt="electronic image"
+              alt="bueaty Product image"
               style="width: 300px; height: 200px"
             />
           </div>
           <div class="flip-card-back">
-            <h1>Electronics</h1>
-            <p>Click to go to the electronics page</p>
+            <h1>Bueaty Product</h1>
+            <p>Click to go to the bueaty Product page</p>
+          </div>
+        </div>
+      </div>
+    </router-link>
+    <router-link to="/HomeDecor">
+      <div>Home Decoration Product</div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img
+              :src="homeDecoration"
+              alt="bueaty Product image"
+              style="width: 300px; height: 200px"
+            />
+          </div>
+          <div class="flip-card-back">
+            <h1>Home Decoration Product</h1>
+            <p>Click to go to the Home Decoration Product page</p>
           </div>
         </div>
       </div>
@@ -56,6 +77,7 @@ export default {
     return {
       eleThumbnail: require("@/assets/images/eleThumnail.jpg"),
       bueatyThumbnail: require("@/assets/images/BeautyThumnail.jpg"),
+      homeDecoration: require("@/assets/images/HomeThumnail.jpg"),
     };
   },
 };
